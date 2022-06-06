@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>用户列表</title>
+    <link rel="stylesheet" href="../../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+</head>
+<body class="container">
+<br/>
+<h1>用户列表</h1>
+<br/><br/>
+<div class="with:80%">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>标题</th>
+            <th>创建时间</th>
+            <th>更改时间</th>
+            <th>删除</th>
+            <th>修改</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  th:each="articles : ${articles}">
+            <th scope="row" th:text="${articles.title}"></th>
+            <td th:text="${articles.timecreate}"></td>
+            <td th:text="${articles.timeupdate}"></td>
+            <td><a th:href="@{/toEdit(id=${articles.id})}">编辑</a></td>
+            <td><a th:href="@{/delete(id=${articles.id})}">删除</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="form-group">
+    <div class="col-sm-2 control-label" >
+        <a href="userAdd.html" th:href="@{/toAdd}" class="btn btn-info">添加</a>
+    </div>
+</div>
+
+</body>
+</html>

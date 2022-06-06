@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>登录成功</title>
+    <link rel="stylesheet" href="../../static/css/bootstrap.css" th:href="@{/css/bootstrap.css}"/>
+</head>
+<body>
+<input value="欢迎，登录成功">
+<td></td>
+<h5>三秒后自动跳转</h5>
+<script>
+    setTimeout("location.href='/showArticle'",3000);
+</script>
+</body>
+</html>
